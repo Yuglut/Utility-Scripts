@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# install utilities
+
+#cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+binfolder='/home/'${USER}'/bin'
+if [ ! -d ${binfolder} ] ; then
+	echo 'Creating ~/bin directory in '${binfolder}
+	mkdir ${binfolder}
+fi
+
+echo 'Linking utilities to the ~/bin directory'
+chmod +x MakeLink.sh
+./MakeLink.sh
