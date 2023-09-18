@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # install utilities
 
@@ -13,3 +13,8 @@ fi
 echo 'Linking utilities to the ~/bin directory'
 chmod +x MakeLink.sh
 ./MakeLink.sh
+
+echo 'Creating the manpage. Requires sudo priviledges'
+readarray -d : -t arr <<< $(manpath)
+manfolder=${arr[1]}
+sudo cp ntfy-run.1.gz ${manfolder}/man1/.
